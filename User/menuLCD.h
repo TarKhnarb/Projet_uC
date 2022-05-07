@@ -4,6 +4,7 @@
 #include "touch\touch_panel.h"
 #include "global.h"
 #include <stdio.h>
+#include <string.h>
 
 /*
  * initMenu()
