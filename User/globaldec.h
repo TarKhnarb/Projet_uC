@@ -20,12 +20,8 @@ bool maintienBouton2 = false;
 bool oldMaintienBouton = false;
 bool oldMaintienBouton2 = false;
 
-<<<<<<< Updated upstream
-
-=======
 //__________ CAN.h __________
 uint16_t temperature;
 
 //__________ emmeteur.h __________
 bool flagTIM1 = false;
->>>>>>> Stashed changes

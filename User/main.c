@@ -22,22 +22,18 @@
 
 #include "affichagelcd.h"
 #include "menuLCD.h"
-<<<<<<< Updated upstream
-
 #include "globaldec.h" // fichier déclaration variables globales
-=======
 #include "bouton.h"
 #include "CAN.h"
 #include "emetteur.h"
->>>>>>> Stashed changes
 
 PINSEL_CFG_Type			PWM_Pin_Config; // Structure Pinsel -> click droit goto definition
 	
 //===========================================================//
 // Function: Main
 //===========================================================//
-int main(void)
-{	  
+int main(void){
+	
 //----------------------------------------------------------------	
 // Exemple affichage LCD 4 carrés couleur et chaine de caractère
 //----------------------------------------------------------------
@@ -69,12 +65,7 @@ int main(void)
 //----------------------------------------------------------------	
 // Boucle infinie
 //----------------------------------------------------------------
-<<<<<<< Updated upstream
 
-    while(1)
-		{
-			menu();
-=======
 		//initTempSensor();
 		initTimer0();
 		initTimer1();
@@ -85,13 +76,8 @@ int main(void)
 			menu();
 			BP();
 			BP2();
->>>>>>> Stashed changes
-		}
-		
-		
-		
-		
-	}
+		}	
+}
 
 //---------------------------------------------------------------------------------------------	
 #ifdef  DEBUG
