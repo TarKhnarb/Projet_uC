@@ -105,7 +105,7 @@ void sendMessage(char *msg){
 	
 	unsigned char i, j;
 	startTimer0();
-	startTimer1(9600);	// Première modulation pendant 9000us
+	startTimer1(9000);	// Première modulation pendant 9000us
 	startTimer1(4500);	// Remise à 0
 	for(i = 0; i < 8; ++i){
 		
@@ -125,6 +125,6 @@ void sendMessage(char *msg){
 	}
 	startTimer0();	// Bit de stop
 	startTimer1(600);
-	startTimer1(10000);
+	startTimer1(40000);
 }
 

@@ -14,11 +14,11 @@ uint16_t touch_x, touch_y ;
 unsigned char numMenu;
 
 //__________ bouton.h __________
-bool maintienBouton = false;
-bool maintienBouton2 = false;
+bool maintienBouton;
+bool maintienBouton2;
 
-bool oldMaintienBouton = false;
-bool oldMaintienBouton2 = false;
+bool oldMaintienBouton = true;
+bool oldMaintienBouton2 = true;
 
 //__________ CAN.h __________
 uint16_t temperature;
