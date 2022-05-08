@@ -24,7 +24,11 @@ void menu(void){
 		
 			//Rectangle température
 			LCD_Draw_Rectangle(168,30,50,40,2,0,Black,Yellow);
+<<<<<<< Updated upstream
 			sprintf(chaine,"C*");
+=======
+			/*sprintf(chaine, "%d", temperature); //*/ sprintf(chaine,"C*");
+>>>>>>> Stashed changes
 			LCD_Write_String (186,42,chaine,White,Blue);
 			
 			//Rectangle heure

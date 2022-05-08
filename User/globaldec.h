@@ -1,5 +1,7 @@
-#include "constantes.h" // fichier contenant toutes les constantes du projet
 #include <stdint.h>
+#include <stdbool.h>
+
+#include "constantes.h"
 #include "lpc17xx_i2c.h"
 
 //__________ affichagelcd.h __________
@@ -10,7 +12,20 @@ uint16_t touch_x, touch_y ;
 //__________ menu.h __________
 
 unsigned char numMenu;
-unsigned char maintienBouton = 0;
-unsigned char oldMaintienBouton = 0;
 
+//__________ bouton.h __________
+bool maintienBouton = false;
+bool maintienBouton2 = false;
 
+bool oldMaintienBouton = false;
+bool oldMaintienBouton2 = false;
+
+<<<<<<< Updated upstream
+
+=======
+//__________ CAN.h __________
+uint16_t temperature;
+
+//__________ emmeteur.h __________
+bool flagTIM1 = false;
+>>>>>>> Stashed changes

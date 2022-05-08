@@ -22,8 +22,14 @@
 
 #include "affichagelcd.h"
 #include "menuLCD.h"
+<<<<<<< Updated upstream
 
 #include "globaldec.h" // fichier déclaration variables globales
+=======
+#include "bouton.h"
+#include "CAN.h"
+#include "emetteur.h"
+>>>>>>> Stashed changes
 
 PINSEL_CFG_Type			PWM_Pin_Config; // Structure Pinsel -> click droit goto definition
 	
@@ -63,10 +69,23 @@ int main(void)
 //----------------------------------------------------------------	
 // Boucle infinie
 //----------------------------------------------------------------
+<<<<<<< Updated upstream
 
     while(1)
 		{
 			menu();
+=======
+		//initTempSensor();
+		initTimer0();
+		initTimer1();
+		
+    while(1)
+		{
+			//getTempSensor();
+			menu();
+			BP();
+			BP2();
+>>>>>>> Stashed changes
 		}
 		
 		
