@@ -24,3 +24,5 @@ void boutons(void);
  * Gère la récupérations de valeurs et l'envoie vers l'application
  */
 void bluetooth(void);
+
+void stationMeteo(void);

@@ -20,3 +20,16 @@ void bluetooth(){
 
 	
 }
+
+void stationMeteo(){
+	
+	boutons();
+	bluetooth();
+	
+	if(flagBluetooth){
+			
+			flagBluetooth = false;
+	}	
+		
+		menu();
+}
