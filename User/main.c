@@ -10,8 +10,8 @@
 #include "menuLCD.h"
 #include "globaldec.h" // fichier déclaration variables globales
 #include "bouton.h"
-#include "CAN.h"
-#include "emetteur.h"
+#include "capteurs.h"
+#include "bluetooth.h"
 
 //PINSEL_CFG_Type			PWM_Pin_Config; // Structure Pinsel -> click droit goto definition
 	
