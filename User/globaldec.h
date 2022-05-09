@@ -24,3 +24,4 @@ uint16_t temperature;
 
 //__________ emmeteur.h __________
 bool flagBluetooth = false;
+bool flagTIM1 = false;

@@ -23,3 +23,4 @@ extern uint16_t temperature;
 
 //__________ emetteur.h __________
 extern bool flagBluetooth;
+extern bool flagTIM1;
