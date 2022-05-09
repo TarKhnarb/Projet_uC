@@ -13,4 +13,6 @@ unsigned char numMenu;
 unsigned char maintienBouton = 0;
 unsigned char oldMaintienBouton = 0;
 
+//__________ CAN.h __________
 
+uint16_t temperature;

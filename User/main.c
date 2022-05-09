@@ -20,10 +20,11 @@
 #include "touch\lcd_api.h"
 #include "touch\touch_panel.h"
 
+#include "globaldec.h" // fichier déclaration variables globales
 #include "affichagelcd.h"
 #include "menuLCD.h"
-
-#include "globaldec.h" // fichier déclaration variables globales
+#include "bouton.h"
+#include "CAN.h"
 
 PINSEL_CFG_Type			PWM_Pin_Config; // Structure Pinsel -> click droit goto definition
 	
@@ -63,10 +64,12 @@ int main(void)
 //----------------------------------------------------------------	
 // Boucle infinie
 //----------------------------------------------------------------
-
+		initTempSensor();
     while(1)
 		{
+			getTempSensor();
 			menu();
+			BP();
 		}
 		
 		
