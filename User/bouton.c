@@ -16,3 +16,19 @@ void BP(void){
 	
 	oldMaintienBouton = bp;
 }
+
+void BP2(void){
+	
+	bool bp = ((GPIO_ReadValue(2)>>11)&0x1);
+	unsigned int i;
+	if(bp != oldMaintienBouton2){
+		
+		for(i = 0; i < 1000; ++i){}
+		if(bp){
+			
+			sendMessage("*T20.0*");
+		}
+	}
+	
+	oldMaintienBouton2 = bp;
+}
