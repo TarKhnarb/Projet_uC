@@ -23,15 +23,21 @@ int main(void){
 	
 	  initMenu();
 		//initTempSensor();
-		initTimer0();
-		initTimer1();
+		initBluetooth();
 		
     while(1){
 
 			//getTempSensor();
-			menu();
 			BP();
 			BP2();
+			menu();
+
+			
+			if(flagBluetooth){
+				
+				flagBluetooth = false;
+			}
+			
 		}	
 }
 

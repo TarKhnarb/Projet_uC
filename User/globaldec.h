@@ -10,7 +10,6 @@ char chaine[30]; // buffer pour l'affichage sur le LCD
 uint16_t touch_x, touch_y ;
 
 //__________ menu.h __________
-
 unsigned char numMenu;
 
 //__________ bouton.h __________
@@ -24,4 +23,4 @@ bool oldMaintienBouton2 = true;
 uint16_t temperature;
 
 //__________ emmeteur.h __________
-bool flagTIM1 = false;
+bool flagBluetooth = false;
