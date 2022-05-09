@@ -1,14 +1,14 @@
 //===========================================================//
 // Projet Micro - SNUM1 - ENSSAT														 //
 //===========================================================//
-// File                : Programme de départ
+// File                : Programme de dÃ©part
 // Hardware Environment: Open1768	
-// Build Environment   : Keil µVision
+// Build Environment   : Keil ÂµVision
 //===========================================================//
 
+#include "globaldec.h" // fichier dÃ©claration variables globales
 #include "affichagelcd.h"
 #include "menuLCD.h"
-#include "globaldec.h" // fichier déclaration variables globales
 #include "bouton.h"
 #include "CAN.h"
 #include "emetteur.h"
@@ -24,19 +24,20 @@ int main(void){
 	initMenu();	// Initialisation du menu
 	
 		//__________ ADC.h __________
-	//initTempSensor();	// Initialisation du capteur de température
+	//initTempSensor();	// Initialisation du capteur de tempÃ©rature
 	
 		//__________ emetteur.h __________
 	initBluetooth();	// Initialisation du bluetooth
 	
 	while(1){
 
-		//getTempSensor();	// Récupère la valeur du capteur
+		//getTempSensor();	// RÃ©cupÃ¨re la valeur du capteur
 		
 		BP(); // Bouton de changement de menu
 		
-		BP2();	// BP test de l'envoi de données à l'appli
-		if(flagBluetooth){
+		BP2();	// BP test de l'envoi de donnÃ©es Ã  l'appli
+		
+    if(flagBluetooth){
 			
 			flagBluetooth = false;
 		}	
