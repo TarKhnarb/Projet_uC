@@ -16,7 +16,7 @@
 //===========================================================//
 int main(void){
 		
-		initialisations();
+	initialisations();
 	
 	while(1){
 		
