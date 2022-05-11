@@ -19,9 +19,16 @@ bool maintienBouton2;
 bool oldMaintienBouton = true;
 bool oldMaintienBouton2 = true;
 
-//__________ CAN.h __________
+//__________ capteur.h __________
 uint16_t temperature;
+uint16_t luminosite;
+uint16_t co2;
+uint16_t humidite;
 
-//__________ emmeteur.h __________
+//__________ bluetooth.h __________
 bool flagBluetooth = false;
 bool flagTIM1 = false;
+char stringToSend[7];
+
+//__________ application.h __________
+uint8_t sensorToUpdate = 0;

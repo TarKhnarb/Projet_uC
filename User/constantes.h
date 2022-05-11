@@ -10,17 +10,7 @@ typedef enum{
 	bleu
 } touche ;
 
-typedef enum{
-	
-	Temperature,
-	Luminosite,
-	CO2,
-	Humidite,
-	Max
-} Sensors;
-
-
-//__________ CAN.h __________
+//__________ bluetooth.h __________
 #define PCONP_ *(unsigned long *)0x400FC0C4
 
 #endif // CONTANT_H

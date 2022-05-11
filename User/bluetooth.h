@@ -5,6 +5,7 @@
 #include "touch\ili_lcd_general.h"
 #include "menuLCD.h"
 #include "global.h"
+#include "constantes.h"
 
 #include <stdio.h>
 #include <string.h>

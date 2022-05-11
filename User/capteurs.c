@@ -1,4 +1,4 @@
-#include "CAN.h"
+#include "capteurs.h"
 
 void initTempSensor(void){
 	

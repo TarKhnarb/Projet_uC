@@ -1,7 +1,8 @@
 #include <stdbool.h>
 #include "global.h"
 #include "touch\ili_lcd_general.h"
-#include "emetteur.h"
+
+#include "bluetooth.h"
 
 /*
  *initBP()
