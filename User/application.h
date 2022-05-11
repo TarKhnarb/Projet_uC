@@ -1,8 +1,11 @@
 #include "bouton.h"
 #include "capteurs.h"
-#include "constantes.h"
 #include "bluetooth.h"
+#include "global.h"
 #include "menuLCD.h"
+
+#include <stdlib.h>
+#include <stdio.h>
 
 /*
  * initialisations():
@@ -25,4 +28,8 @@ void boutons(void);
  */
 void bluetooth(void);
 
+/*
+ * stationMeteo():
+ * Fonction principale de notre application
+ */
 void stationMeteo(void);
