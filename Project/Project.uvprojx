@@ -10,7 +10,7 @@
       <TargetName>Open1786</TargetName>
       <ToolsetNumber>0x4</ToolsetNumber>
       <ToolsetName>ARM-ADS</ToolsetName>
-      <pCCUsed>5060750::V5.06 update 6 (build 750)::ARMCC</pCCUsed>
+      <pCCUsed>5060960::V5.06 update 7 (build 960)::.\ARMCC</pCCUsed>
       <uAC6>0</uAC6>
       <TargetOption>
         <TargetCommonOption>
@@ -457,6 +457,11 @@
               <FileName>lpc17xx_ssp.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\Libraries\LCP1768_StdPeriph_Driver\source\lpc17xx_ssp.c</FilePath>
+            </File>
+            <File>
+              <FileName>lpc17xx_adc.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Libraries\LCP1768_StdPeriph_Driver\source\lpc17xx_adc.c</FilePath>
             </File>
           </Files>
         </Group>
