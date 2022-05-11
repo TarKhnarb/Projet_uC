@@ -81,7 +81,7 @@ void UART0_IRQHandler(){
 			break;
 	}
 	
-	menu();
+	//menu();	// A voir si encore necessaire
 }
 
 
@@ -95,12 +95,12 @@ void initTimer1(){
 	TIM_MODE_OPT TimerCounterMode = TIM_TIMER_MODE;
 	TIM_TIMERCFG_Type TIM_ConfigStruct;
 	TIM_ConfigStruct.PrescaleOption = TIM_PRESCALE_USVAL;
-	TIM_ConfigStruct.PrescaleValue = 2500;
+	TIM_ConfigStruct.PrescaleValue = 100;
 
 	TIM_MatchConfigStruct.MatchChannel = 1;
 	TIM_MatchConfigStruct.IntOnMatch = ENABLE;
 	TIM_MatchConfigStruct.ResetOnMatch = ENABLE;
-	TIM_MatchConfigStruct.StopOnMatch = ENABLE;
+	TIM_MatchConfigStruct.StopOnMatch = DISABLE;
 	TIM_MatchConfigStruct.ExtMatchOutputType = TIM_EXTMATCH_NOTHING;
 	TIM_MatchConfigStruct.MatchValue = 100;	// par défaut
 
@@ -116,8 +116,7 @@ void startTimer1(uint32_t duree){
 	TIM_UpdateMatchValue(LPC_TIM1, 1, duree);	// On met à jour la durée du timer
 	TIM_Cmd(LPC_TIM1, ENABLE);								// On démarre le compteur
 
-	while(!flagTIM1);													// Tant que l'on a pas de levé de flag du timer 1 on attend
-	flagTIM1 = false;															// On baisse le flag du timer 1
+	flagTIM1 = true;															// On lève le flag du timer 1
 }
 
 	/*********************
@@ -125,6 +124,7 @@ void startTimer1(uint32_t duree){
 	 *********************/
 void TIMER1_IRQHandler(){
 
-	flagTIM1 = true;														// On lève le flag du timer 1
+	sensorToUpdate = (sensorToUpdate + 1)%4;
+	flagTIM1 = false;														// On baisse le flag du timer 1
 	TIM_ClearIntPending(LPC_TIM1, TIM_MR1_INT);	// Acquittement de MR1
 }
