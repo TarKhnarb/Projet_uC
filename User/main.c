@@ -1,12 +1,12 @@
 //===========================================================//
 // Projet Micro - SNUM1 - ENSSAT														 //
 //===========================================================//
-// File                : Programme de départ
+// File                : Programme de dÃ©part
 // Hardware Environment: Open1768	
-// Build Environment   : Keil µVision
+// Build Environment   : Keil ÂµVision
 //===========================================================//
 
-#include "globaldec.h" // fichier déclaration variables globales
+#include "globaldec.h" // fichier dï¿½claration variables globales
 #include "application.h"
 
 //PINSEL_CFG_Type			PWM_Pin_Config; // Structure Pinsel -> click droit goto definition

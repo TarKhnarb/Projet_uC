@@ -5,6 +5,7 @@
 #include <stdbool.h>
 
 #include "constantes.h"
+#define PCONP_ *(unsigned long *)0x400FC0C4
 
 //__________ affichagelcd.h __________
 extern char chaine[30]; // buffer pour l'affichage sur le LCD
