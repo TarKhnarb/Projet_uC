@@ -26,7 +26,7 @@ void BP2(void){
 		for(i = 0; i < 1000; ++i){}
 		if(bp){
 			
-			sendMessage("*T20.0*");
+			// Instruction
 		}
 	}
 	

@@ -1,6 +1,7 @@
 #include <stdbool.h>
 #include "global.h"
 #include "touch\ili_lcd_general.h"
+
 #include "bluetooth.h"
 
 /*
