@@ -524,14 +524,44 @@
               <FilePath>..\User\menuLCD.h</FilePath>
             </File>
             <File>
-              <FileName>emetteur.c</FileName>
+              <FileName>application.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\User\emetteur.c</FilePath>
+              <FilePath>..\User\application.c</FilePath>
             </File>
             <File>
-              <FileName>emetteur.h</FileName>
+              <FileName>application.h</FileName>
               <FileType>5</FileType>
-              <FilePath>..\User\emetteur.h</FilePath>
+              <FilePath>..\User\application.h</FilePath>
+            </File>
+            <File>
+              <FileName>bluetooth.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\User\bluetooth.c</FilePath>
+            </File>
+            <File>
+              <FileName>bluetooth.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\User\bluetooth.h</FilePath>
+            </File>
+            <File>
+              <FileName>bouton.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\User\bouton.c</FilePath>
+            </File>
+            <File>
+              <FileName>bouton.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\User\bouton.h</FilePath>
+            </File>
+            <File>
+              <FileName>capteurs.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\User\capteurs.c</FilePath>
+            </File>
+            <File>
+              <FileName>capteurs.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\User\capteurs.h</FilePath>
             </File>
           </Files>
         </Group>
