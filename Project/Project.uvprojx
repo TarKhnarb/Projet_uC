@@ -10,7 +10,7 @@
       <TargetName>Open1786</TargetName>
       <ToolsetNumber>0x4</ToolsetNumber>
       <ToolsetName>ARM-ADS</ToolsetName>
-      <pCCUsed>5060750::V5.06 update 6 (build 750)::ARMCC</pCCUsed>
+      <pCCUsed>5060960::V5.06 update 7 (build 960)::.\ARMCC</pCCUsed>
       <uAC6>0</uAC6>
       <TargetOption>
         <TargetCommonOption>
@@ -458,6 +458,11 @@
               <FileType>1</FileType>
               <FilePath>..\Libraries\LCP1768_StdPeriph_Driver\source\lpc17xx_ssp.c</FilePath>
             </File>
+            <File>
+              <FileName>lpc17xx_adc.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Libraries\LCP1768_StdPeriph_Driver\source\lpc17xx_adc.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -524,14 +529,44 @@
               <FilePath>..\User\menuLCD.h</FilePath>
             </File>
             <File>
-              <FileName>emetteur.c</FileName>
+              <FileName>application.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\User\emetteur.c</FilePath>
+              <FilePath>..\User\application.c</FilePath>
             </File>
             <File>
-              <FileName>emetteur.h</FileName>
+              <FileName>application.h</FileName>
               <FileType>5</FileType>
-              <FilePath>..\User\emetteur.h</FilePath>
+              <FilePath>..\User\application.h</FilePath>
+            </File>
+            <File>
+              <FileName>bluetooth.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\User\bluetooth.c</FilePath>
+            </File>
+            <File>
+              <FileName>bluetooth.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\User\bluetooth.h</FilePath>
+            </File>
+            <File>
+              <FileName>bouton.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\User\bouton.c</FilePath>
+            </File>
+            <File>
+              <FileName>bouton.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\User\bouton.h</FilePath>
+            </File>
+            <File>
+              <FileName>capteurs.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\User\capteurs.c</FilePath>
+            </File>
+            <File>
+              <FileName>capteurs.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\User\capteurs.h</FilePath>
             </File>
           </Files>
         </Group>
