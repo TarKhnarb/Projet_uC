@@ -14,7 +14,7 @@ void menu(void){
 		case 0:
 			//Rectangle temps
 			LCD_Draw_Rectangle(32,30,50,40,2,0,Black,Yellow);
-			sprintf(chaine,"temps");
+			sprintf(chaine, "%d", sensorToUpdate);//sprintf(chaine,"temps");
 			LCD_Write_String (38,42,chaine,White,Blue);
 		
 			//Rectangle jour/nuit
@@ -25,7 +25,7 @@ void menu(void){
 			//Rectangle température
 			LCD_Draw_Rectangle(168,30,50,40,2,0,Black,Yellow);
 			sprintf(chaine, "%.1d*c", temperature); // sprintf(chaine,"C*");
-			LCD_Write_String (186,42,chaine,White,Blue);
+			LCD_Write_String (180,42,chaine,White,Blue);
 			
 			//Rectangle heure
 			LCD_Draw_Rectangle(32,150,186,40,2,0,Black,Yellow);

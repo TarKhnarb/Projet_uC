@@ -27,31 +27,27 @@ void bluetooth(){
 
 	if(!flagTIM1){
 		
-		startTimer1(2000000);
-		switch(sensorToUpdate){
-			
-			case 0:	// température
-				temperature = (rand()%10) + 10;
-				sendMessage(concatene('T', temperature));
-				break;
-			
-			case 1:	// luminosité
-				luminosite = (rand()%90) + 10;
-				sendMessage(concatene('L', luminosite));
-				break;
-			
-			case 2:	// CO2
-				co2 = (rand()%90) + 10;
-				sendMessage(concatene('C', co2));
-				break;
-			
-			case 3:	// Humidité
-				humidite = (rand()%90) + 10;
-				sendMessage(concatene('H', humidite)); 
-				break;
-			
-		 default:
-				break;
+		startTimer1(200); // 2000	// 2s
+		if(sensorToUpdate == 0){
+				
+				// température
+			temperature = 10;//(rand()%10) + 10;
+			sendMessage(concatene('T', temperature));
+		}
+		else if(sensorToUpdate == 1){
+			// luminosité
+			luminosite = 20;//(rand()%90) + 10;
+			sendMessage(concatene('L', luminosite));
+		}
+		else if(sensorToUpdate == 2){
+			// CO2
+			co2 = 30;//(rand()%90) + 10;
+			sendMessage(concatene('C', co2));
+		}
+		else if(sensorToUpdate == 3){
+			// Humidité
+			humidite = 40;//(rand()%90) + 10;
+			sendMessage(concatene('H', humidite)); 
 		}
 	}
 	

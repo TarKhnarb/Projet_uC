@@ -12,7 +12,7 @@ extern char chaine[30]; // buffer pour l'affichage sur le LCD
 extern uint16_t touch_x, touch_y ;
 
 //__________ menu.h __________
-extern unsigned char numMenu;
+extern uint8_t numMenu;
 
 //__________ bouton.h __________
 extern bool maintienBouton;
