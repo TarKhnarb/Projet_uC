@@ -11,11 +11,14 @@ void initMenu(void){
 void menu(void){
 	switch(numMenu){
 		
+		// x: 0->239
+		// y: 0->319
 		case 0:
 			//Rectangle temps
 			LCD_Draw_Rectangle(32,30,50,40,2,0,Black,Yellow);
-			sprintf(chaine,"temps");
-			LCD_Write_String (38,42,chaine,White,Blue);
+			//sprintf(chaine,"temps");
+			//LCD_Write_String (38,42,chaine,White,Blue);
+			printPixelArt(sensorToUpdate, 38, 42);
 		
 			//Rectangle jour/nuit
 			LCD_Draw_Rectangle(88,30,50,40,2,0,Black,Yellow);
@@ -69,3 +72,58 @@ void menu(void){
 	}
 }
 
+void subPrintPixelArt(unsigned short pxl[21][21], unsigned int x, unsigned int y, unsigned int e){
+
+	int i,j,k,h;
+	
+	for(j = y; j < y+21; ++j){
+		
+		lcd_SetCursor(x,j);
+		rw_data_prepare();
+
+		for(i = x; i <= x+21; ++i){
+			
+			write_data(pxl[j-y][i-x]);
+		}
+	}
+	/*	Todo faire en sorte que le write data fonctionne
+	for(j = y; j < y+(21*e); j+=e){
+		
+		lcd_SetCursor(x,j);
+		rw_data_prepare();
+
+		for(i = x; i <= x+(21*e); i+=e){
+			
+			for(h = j; h <= j+e; ++h){
+				for(k = i; k <= i+e; ++k){
+					
+					write_data(pxl[((j-y)%21)][k-(x+21*e)]);
+				}
+			}
+		}
+	}*/
+}
+
+void printPixelArt(uint8_t temps, unsigned int x, unsigned int y){
+	
+	if(temps == 0){
+		
+		subPrintPixelArt(LUNE, x, y, 2);
+	}
+	else if (temps == 1){
+		
+		subPrintPixelArt(SOLEIL, x, y, 2);
+	}
+	else if (temps == 2){
+		
+		subPrintPixelArt(NUAGE, x, y, 2);
+	}
+	else if (temps == 3){
+		
+		subPrintPixelArt(PLUIE, x, y, 2);
+	}
+	else if (temps == 4){
+		
+		subPrintPixelArt(NEIGE, x, y, 2);
+	}
+}
