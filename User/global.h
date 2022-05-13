@@ -34,3 +34,16 @@ extern char stringToSend[7];
 
 //__________ application.h __________
 extern uint8_t sensorToUpdate;
+
+
+//__________ menuLCD.h __________
+extern const unsigned short BF;
+extern const unsigned short GF;
+extern const unsigned short GC;
+extern const unsigned short NN;
+
+extern unsigned short LUNE[21][21];
+extern unsigned short SOLEIL[21][21];
+extern unsigned short NUAGE[21][21];
+extern unsigned short PLUIE[21][21];
+extern unsigned short NEIGE[21][21];
