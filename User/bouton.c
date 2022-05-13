@@ -27,6 +27,7 @@ void BP2(void){
 		if(bp){
 			
 			// Instruction
+			getTempSensor();
 		}
 	}
 	

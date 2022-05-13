@@ -13,9 +13,6 @@ uint16_t touch_x, touch_y ;
 unsigned char numMenu;
 
 //__________ bouton.h __________
-bool maintienBouton;
-bool maintienBouton2;
-
 bool oldMaintienBouton = true;
 bool oldMaintienBouton2 = true;
 
