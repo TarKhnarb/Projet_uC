@@ -13,6 +13,8 @@ extern uint16_t touch_x, touch_y ;
 
 //__________ menu.h __________
 extern unsigned char numMenu;
+extern unsigned char temps;
+extern unsigned char jourNuit;
 
 //__________ bouton.h __________
 extern bool maintienBouton;

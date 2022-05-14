@@ -9,8 +9,10 @@
 char chaine[30]; // buffer pour l'affichage sur le LCD
 uint16_t touch_x, touch_y ;
 
-//__________ menu.h __________
+//__________ menuLCD.h __________
 unsigned char numMenu;
+unsigned char temps;
+unsigned char jourNuit;
 
 //__________ bouton.h __________
 bool maintienBouton;
@@ -81,7 +83,7 @@ unsigned short SOLEIL[21][21] =
  {JF, JF, JF, BC, BC, JF, JF, JF, JF, JF, JF, JF, JF, JF, JF, JF, BC, BC, JF, JF, JF},
  {BC, BC, BC, BC, BC, BC, JF, JF, JF, JF, JF, JF, JF, JF, JF, BC, BC, BC, BC, BC, BC},
  {BC, BC, BC, JF, JF, BC, JF, JF, JF, JF, JF, JF, JF, JF, JF, BC, JF, JF, BC, BC, BC},
- {BC, BC, JF, JF, JF, BC, BC, JF, JF, JF, BC, JF, JF, JF, BC, BC, JF, JF, JF, BC, BC},
+ {BC, BC, JF, JF, JF, BC, BC, JF, JF, JF, JF, JF, JF, JF, BC, BC, JF, JF, JF, BC, BC},
  {BC, BC, BC, JF, BC, BC, BC, BC, BC, JF, JF, JF, BC, BC, BC, BC, BC, JF, BC, BC, BC},
  {BC, BC, BC, BC, BC, BC, JF, JF, BC, BC, BC, BC, BC, JF, JF, BC, BC, BC, BC, BC, BC},
  {BC, BC, BC, BC, BC, JF, JF, JF, BC, BC, JF, BC, BC, JF, JF, JF, BC, BC, BC, BC, BC},
