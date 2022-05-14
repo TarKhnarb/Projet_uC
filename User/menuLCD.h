@@ -18,5 +18,5 @@ void initMenu(void);
  */
 void menu(void);
 
-
+void printPixelArt(uint8_t temps, unsigned int x, unsigned int y);
 
