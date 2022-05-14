@@ -63,8 +63,8 @@
     <View>
       <WinId>2506</WinId>
       <ViewName>Trace Data</ViewName>
-      <UserString></UserString>
-      <TableColWidths>75 135 130 95 70 230 200 150</TableColWidths>
+      <UserString>FiltIdx=0;DescrEn=0;DescrHeight=4;FuncTrc=1;FindType=8;ColWidths=004B00870082005F004600E600C80096</UserString>
+      <TableColWidths>75 135 95 70 230 200 150</TableColWidths>
     </View>
     <View>
       <WinId>466</WinId>
@@ -520,7 +520,7 @@
       <Window>
         <RegID>199</RegID>
         <PaneID>199</PaneID>
-        <IsVisible>0</IsVisible>
+        <IsVisible>1</IsVisible>
         <IsFloating>0</IsFloating>
         <IsTabbed>0</IsTabbed>
         <IsActivated>0</IsActivated>

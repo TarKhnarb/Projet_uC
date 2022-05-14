@@ -14,10 +14,10 @@ unsigned char numMenu;
 unsigned char temps;
 unsigned char jourNuit;
 
-//__________ bouton.h __________
-bool maintienBouton;
-bool maintienBouton2;
+//__________ application.h __________
+uint8_t sensorToUpdate;
 
+//__________ bouton.h __________
 bool oldMaintienBouton = true;
 bool oldMaintienBouton2 = true;
 
@@ -36,13 +36,13 @@ char stringToSend[7];
 uint8_t sensorToUpdate = 0;
 
 //__________ menuLCD.h __________
-const unsigned short BF = 0x1336;	// pixel Bleu Foncé
+const unsigned short BF = 0x1336;	// pixel Bleu Foncï¿½
 const unsigned short BC = 0x38DA;	// pixel Bleu Clair
-const unsigned short GF = 0xAAEA; // pixel Gris Foncé
+const unsigned short GF = 0xAAEA; // pixel Gris Foncï¿½
 const unsigned short GC = 0xDD9D; // pixel Gris Clair
 const unsigned short NN = 0x0000;	// pixel Noir Noir
 const unsigned short BB = 0xFFFF; // pixel Blanc Blanc
-const unsigned short JF = 0xFE23; // pixel Jaune Foncé
+const unsigned short JF = 0xFE23; // pixel Jaune Foncï¿½
 
 unsigned short LUNE[21][21] = 
 {{BF, BF, BF, BF, BF, BF, BF, BF, BF, BF, BF, BF, BF, BF, BF, BF, BF, BF, BF, BF, BF},
