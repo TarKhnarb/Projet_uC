@@ -28,7 +28,7 @@ void menu(void){
 			//Rectangle température
 			LCD_Draw_Rectangle(165, 28, 47, 47, 2, 0, Black,Yellow);
 			sprintf(chaine, "%.1d *c", temperature);
-			LCD_Write_String (175, 45, chaine, White, Blue);
+			LCD_Write_String (168, 45, chaine, White, Blue);
 			
 			//Rectangle heure
 			LCD_Draw_Rectangle(69, 138, 100, 47, 2, 0, Black, Yellow);

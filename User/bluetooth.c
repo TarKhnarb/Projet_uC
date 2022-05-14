@@ -120,7 +120,7 @@ void startTimer1(uint32_t duree){
 	TIM_UpdateMatchValue(LPC_TIM1, 2, duree);	// On met à jour la durée du timer
 	TIM_Cmd(LPC_TIM1, ENABLE);								// On démarre le compteur
 
-	flagTIM1 = true;															// On lève le flag du timer 1
+	flagTIM1 = true;													// On lève le flag du timer 1
 }
 
 	/*********************
