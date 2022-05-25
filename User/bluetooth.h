@@ -41,7 +41,7 @@ void UART0_IRQHandler(void);
 void initTimer1(void);
 
 /*
- * startTimer1(duree: uint32_t, durée en us)
+ * startTimer1(duree: uint32_t, durée en ms)
  * Lance timer 1 pour duree us
  */
 void startTimer1(uint32_t duree);

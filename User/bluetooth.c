@@ -1,10 +1,12 @@
 #include "bluetooth.h"
 
 void initBluetooth(){
-	
+		
 	PINSEL_CFG_Type pinCfg;
 	UART_CFG_Type uartCfg;
 	UART_FIFO_CFG_Type uartFIFOCfg;	// configuration FIFO pour la gestion des tâches
+
+	sensorToUpdate = 0;		// inittialisation de la variable d'actualisation des capteurs
 
 	//(shema 3A)
 	// Tx pin P0.2 
@@ -95,9 +97,9 @@ void initTimer1(){
 	TIM_MODE_OPT TimerCounterMode = TIM_TIMER_MODE;
 	TIM_TIMERCFG_Type TIM_ConfigStruct;
 	TIM_ConfigStruct.PrescaleOption = TIM_PRESCALE_USVAL;
-	TIM_ConfigStruct.PrescaleValue = 100;
+	TIM_ConfigStruct.PrescaleValue = 25000;	// précision 1ms
 
-	TIM_MatchConfigStruct.MatchChannel = 1;
+	TIM_MatchConfigStruct.MatchChannel = 2;
 	TIM_MatchConfigStruct.IntOnMatch = ENABLE;
 	TIM_MatchConfigStruct.ResetOnMatch = ENABLE;
 	TIM_MatchConfigStruct.StopOnMatch = DISABLE;
@@ -106,6 +108,8 @@ void initTimer1(){
 
 	TIM_Init(LPC_TIM1, TimerCounterMode, &TIM_ConfigStruct);
 	TIM_ConfigMatch(LPC_TIM1, &TIM_MatchConfigStruct);
+	
+	NVIC_EnableIRQ(TIMER1_IRQn);	// On active la fonction d'interruption
 }
 
 	/***************
@@ -113,10 +117,10 @@ void initTimer1(){
 	 ***************/
 void startTimer1(uint32_t duree){
 
-	TIM_UpdateMatchValue(LPC_TIM1, 1, duree);	// On met à jour la durée du timer
+	TIM_UpdateMatchValue(LPC_TIM1, 2, duree);	// On met à jour la durée du timer
 	TIM_Cmd(LPC_TIM1, ENABLE);								// On démarre le compteur
 
-	flagTIM1 = true;															// On lève le flag du timer 1
+	flagTIM1 = true;													// On lève le flag du timer 1
 }
 
 	/*********************
@@ -126,5 +130,5 @@ void TIMER1_IRQHandler(){
 
 	sensorToUpdate = (sensorToUpdate + 1)%4;
 	flagTIM1 = false;														// On baisse le flag du timer 1
-	TIM_ClearIntPending(LPC_TIM1, TIM_MR1_INT);	// Acquittement de MR1
+	TIM_ClearIntPending(LPC_TIM1, TIM_MR2_INT);	// Acquittement de MR2
 }
