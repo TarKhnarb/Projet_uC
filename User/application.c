@@ -6,14 +6,15 @@
 void initialisations(){
 	
 	initMenu();
-	initBluetooth();
-	initTimer1();
+	//initBluetooth();
+	//initTimer1();
+	initTempSensor();
 }
 
 void boutons(){
 	
 	BP();
-	//BP2();
+	BP2();
 }
 
 char* concatene(char caractere, uint32_t value){
@@ -60,6 +61,6 @@ void bluetooth(){
 void stationMeteo(){
 	
 	boutons();
-	bluetooth();
+	//bluetooth();
 	menu();
 }

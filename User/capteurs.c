@@ -2,32 +2,33 @@
 
 void initTempSensor(void){
 	
-	// Output PINs Selection
-		// P0.23: MAT0.0		3rd functionalit
-	PINSEL_CFG_Type			PWM_Pin_Config; // Structure Pinsel -> click droit goto definition
-
-	PWM_Pin_Config.Funcnum 	 = 1;
-	PWM_Pin_Config.OpenDrain = PINSEL_PINMODE_NORMAL;
-	PWM_Pin_Config.Pinmode 	 = PINSEL_PINMODE_NORMAL; //output
-	PWM_Pin_Config.Portnum 	 = 0;
-	PWM_Pin_Config.Pinnum 	 = 23;
-	PINSEL_ConfigPin(&PWM_Pin_Config);
+		// P1.31:
 	
-	PCONP_ |= (1 << 12);
+	PINSEL_CFG_Type			configPin; 
+	PCONP_ |= (1 << 12); //AD0 
+	configPin.Funcnum 	 = 3;
+	configPin.OpenDrain = PINSEL_PINMODE_NORMAL;
+	configPin.Pinmode 	 = PINSEL_PINMODE_NORMAL; //output
+	configPin.Portnum 	 = 1;
+	configPin.Pinnum 	 = 31;
+	PINSEL_ConfigPin(&configPin);
+	
+	
 	
 	ADC_Init(LPC_ADC, 100000);
-	ADC_ChannelCmd (LPC_ADC, 0, ENABLE);
-	ADC_StartCmd(LPC_ADC, ADC_START_NOW);
-	
+	ADC_ChannelCmd (LPC_ADC, 5, ENABLE);
 }
 
 void getTempSensor(void){
 	
-	temperature = ADC_ChannelGetStatus(LPC_ADC, 0, ENABLE);
-	//uint16_t tmp 
-	//temperature = ADC_ChannelGetData(LPC_ADC, 0);
+	uint16_t tmp;
+	float a=0.f;
+	ADC_StartCmd(LPC_ADC, ADC_START_NOW);
+	while(!ADC_ChannelGetStatus(LPC_ADC, 5, 1)){}
 	
-	//int a = (float)(1023-a)*10000/a;
-	//temperature = 1/(log(tmp/10000)/(3975)+1/298.15)-273.15;
-	
+	tmp = ADC_ChannelGetData(LPC_ADC, 5);
+		
+	a += abs((float)((1023-tmp)*10000/tmp));
+	temperature = 1.f/(log(a/10000.f)/3975.f+1.f/298.15f)-273.15f;
+		
 }
