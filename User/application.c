@@ -27,7 +27,7 @@ void bluetooth(){
 
 	if(!flagTIM1){
 		
-		startTimer1(200); // 2000	// 2s
+		startTimer1(2); // 2000	// 2s
 		if(sensorToUpdate == 0){
 				
 				// température

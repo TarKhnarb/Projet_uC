@@ -33,7 +33,7 @@ bool flagTIM1 = false;
 char stringToSend[7];
 
 //__________ application.h __________
-uint8_t sensorToUpdate = 0;
+uint8_t sensorToUpdate;
 
 //__________ menuLCD.h __________
 const unsigned short BF = 0x1336;	// pixel Bleu Fonc�
