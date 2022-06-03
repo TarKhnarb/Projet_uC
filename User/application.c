@@ -6,15 +6,15 @@
 void initialisations(){
 	
 	initMenu();
-	//initBluetooth();
-	//initTimer1();
-	initTempSensor();
+	initBluetooth();
+	initTimer1();
+	initSensors();
 }
 
 void boutons(){
 	
 	BP();
-	BP2();
+	//BP2();
 }
 
 char* concatene(char caractere, uint32_t value){
@@ -28,27 +28,30 @@ void bluetooth(){
 
 	if(!flagTIM1){
 		
-		startTimer1(2); // 2000	// 2s
+		startTimer1(500); // 2000	// 2s
 		if(sensorToUpdate == 0){
-				
-				// température
-			temperature = 10;//(rand()%10) + 10;
+			
+			getTempSensor();
 			sendMessage(concatene('T', temperature));
 		}
 		else if(sensorToUpdate == 1){
-			// luminosité
-			luminosite = 20;//(rand()%90) + 10;
+			
+			getLightSensor();
 			sendMessage(concatene('L', luminosite));
 		}
 		else if(sensorToUpdate == 2){
-			// CO2
-			co2 = 30;//(rand()%90) + 10;
+			
+			co2 = 30;
 			sendMessage(concatene('C', co2));
 		}
 		else if(sensorToUpdate == 3){
-			// Humidité
-			humidite = 40;//(rand()%90) + 10;
+			
+			getMoistureSensor();
 			sendMessage(concatene('H', humidite)); 
+		}
+		else if(sensorToUpdate == 4){
+			
+			getRainSensor();
 		}
 	}
 	
@@ -61,6 +64,6 @@ void bluetooth(){
 void stationMeteo(){
 	
 	boutons();
-	//bluetooth();
+	bluetooth();
 	menu();
 }

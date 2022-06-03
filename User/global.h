@@ -24,10 +24,12 @@ extern bool oldMaintienBouton;
 extern bool oldMaintienBouton2;
 
 //__________ capteurs.h __________
-extern uint16_t temperature;
-extern uint16_t luminosite;
-extern uint16_t co2;
-extern uint16_t humidite;
+extern float temperature;
+extern float luminosite;
+extern float co2;
+extern float humidite;
+extern bool pluie;
+
 
 //__________ bluetooth.h __________
 extern bool flagBluetooth;

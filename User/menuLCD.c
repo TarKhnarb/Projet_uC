@@ -27,7 +27,7 @@ void menu(void){
 		
 			//Rectangle température
 			LCD_Draw_Rectangle(165, 28, 47, 47, 2, 0, Black,Yellow);
-			sprintf(chaine, "%.1d *c", temperature);
+			sprintf(chaine, "%d *c",(int) temperature);
 			LCD_Write_String (168, 45, chaine, White, Blue);
 			
 			//Rectangle heure
@@ -44,12 +44,12 @@ void menu(void){
 		
 			//Rectangle température
 			LCD_Draw_Rectangle(32, 110, 186, 47, 2, 0, Black,Yellow);
-			sprintf(chaine, "Temperature: %.1d *c", temperature);
+			sprintf(chaine, "Temperature: %.1f *c", temperature);
 			LCD_Write_String (50, 125, chaine, White, Blue);
 		
 			//Rectangle humidité
 			LCD_Draw_Rectangle(32, 177, 186, 47, 2, 0, Black,Yellow);
-			sprintf(chaine, "Humidite: %d %%", humidite);
+			sprintf(chaine, "Humidite: %.1f %%", humidite);
 			LCD_Write_String (50, 192, chaine, White, Blue);
 			
 			break;
@@ -61,12 +61,12 @@ void menu(void){
 		
 			//Rectangle luminosité
 			LCD_Draw_Rectangle(32, 110, 186, 47, 2, 0, Black,Yellow);
-			sprintf(chaine, "Luminosite: %d %%", luminosite);
+			sprintf(chaine, "Luminosite: %.1f %%", luminosite);
 			LCD_Write_String (50, 128, chaine, White, Blue);
 		
 			//Rectangle CO2
 			LCD_Draw_Rectangle(32, 177, 186, 47, 2, 0, Black,Yellow);
-			sprintf(chaine, "CO2: %d %%", co2);
+			sprintf(chaine, "CO2: %.1f %%", co2);
 			LCD_Write_String (50, 195, chaine, White, Blue);
 			break;
 		

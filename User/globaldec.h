@@ -22,10 +22,11 @@ bool oldMaintienBouton = true;
 bool oldMaintienBouton2 = true;
 
 //__________ capteur.h __________
-uint16_t temperature;
-uint16_t luminosite;
-uint16_t co2;
-uint16_t humidite;
+float temperature;
+float luminosite;
+float co2;
+float humidite;
+bool pluie;
 
 //__________ bluetooth.h __________
 bool flagBluetooth = false;
