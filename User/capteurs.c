@@ -39,8 +39,7 @@ void getTempSensor(){
 		
 }
 void initLightSensor(){
-	
-
+	// P1.31
 	
 	PINSEL_CFG_Type			configPin;
 	PCONP_ |= (1 << 12); //AD0 
@@ -51,8 +50,6 @@ void initLightSensor(){
 	configPin.Pinnum 	 = 31;
 	PINSEL_ConfigPin(&configPin);
 }
-
-
 
 void getLightSensor(){
 	
@@ -66,11 +63,11 @@ void getLightSensor(){
 		
 	ADC_ChannelCmd (LPC_ADC, 5, DISABLE);
 		
-	luminosite=((float)light/4095.f)*100.f;
+	luminosite = ((float)light/4095.f)*100.f;
 }
 
 void initMoistureSensor(){
-	// P0.24:
+	// P2.11:
 	
 	PINSEL_CFG_Type			configPin; 
 	PCONP_ |= (1 << 12); //AD0 
@@ -83,14 +80,16 @@ void initMoistureSensor(){
 }
 
 void getMoistureSensor(){
+	
 	ADC_ChannelCmd (LPC_ADC, 1, ENABLE);
 	ADC_StartCmd(LPC_ADC, ADC_START_NOW);
 	while(!ADC_ChannelGetStatus(LPC_ADC, 1, 1)){}
+	
 }
 
 void initRainSensor(void){
 	
-	pluie = false;
+	pluie = true;
 }
 
 void getRainSensor(){
@@ -100,11 +99,6 @@ void getRainSensor(){
 	if(bp != oldMaintienBouton2){
 		
 		for(i = 0; i < 1000; ++i){}
-		if(bp){
-			
-			// Instruction
-			
-		}
 		pluie = !pluie;
 	}
 	

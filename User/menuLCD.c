@@ -7,8 +7,8 @@ void initMenu(void){
 	LCD_Initialization();
 	
 	numMenu = 0;	// [3]
-	temps = 0;		// [5]
-	jourNuit = 1;	// [2]
+	temps = 0;		// [1-4]
+	jourNuit = 1;	// [0-1]
 }
 
 void menu(void){
@@ -55,9 +55,9 @@ void menu(void){
 			break;
 		
 		case 2:
-			//Rectangle temps
+			//Rectangle jour/nuit
 			LCD_Draw_Rectangle(96, 28, 47, 47, 2, 0, Black,Yellow);
-			printPixelArt(temps, 98, 30);
+			printPixelArt(jourNuit, 98, 30);
 		
 			//Rectangle luminosité
 			LCD_Draw_Rectangle(32, 110, 186, 47, 2, 0, Black,Yellow);
