@@ -19,11 +19,11 @@ void menu(void){
 		case 0:
 			//Rectangle temps
 			LCD_Draw_Rectangle(28, 28, 47, 47, 2, 0, Black,Yellow);
-			printPixelArt(temps, 30, 30);
+			//printPixelArt(temps, 30, 30);
 		
 			//Rectangle jour/nuit
 			LCD_Draw_Rectangle(96, 28, 47, 47, 2, 0, Black,Yellow);
-			printPixelArt(jourNuit, 98, 30);
+			//printPixelArt(jourNuit, 98, 30);
 		
 			//Rectangle température
 			LCD_Draw_Rectangle(165, 28, 47, 47, 2, 0, Black,Yellow);
@@ -40,7 +40,7 @@ void menu(void){
 		case 1:
 			//Rectangle jour/nuit
 			LCD_Draw_Rectangle(96, 28, 47, 47, 2, 0, Black,Yellow);
-			printPixelArt(jourNuit, 98, 30);
+			//printPixelArt(jourNuit, 98, 30);
 		
 			//Rectangle température
 			LCD_Draw_Rectangle(32, 110, 186, 47, 2, 0, Black,Yellow);
@@ -57,7 +57,7 @@ void menu(void){
 		case 2:
 			//Rectangle jour/nuit
 			LCD_Draw_Rectangle(96, 28, 47, 47, 2, 0, Black,Yellow);
-			printPixelArt(jourNuit, 98, 30);
+			//printPixelArt(jourNuit, 98, 30);
 		
 			//Rectangle luminosité
 			LCD_Draw_Rectangle(32, 110, 186, 47, 2, 0, Black,Yellow);
@@ -93,12 +93,12 @@ void subPrintPixelArt(unsigned short pxl[21][21], unsigned int x, unsigned int y
 		}
 	}
 }
-
+/*
 void printPixelArt(uint8_t temps, unsigned int x, unsigned int y){
 	
 	if(temps == 0){
 		
-		subPrintPixelArt(LUNE, x, y, 2);
+		subPrintPixelArt(SOLEIL, x, y, 2);//LUNE
 	}
 	else if (temps == 1){
 		
@@ -116,4 +116,4 @@ void printPixelArt(uint8_t temps, unsigned int x, unsigned int y){
 		
 		subPrintPixelArt(NEIGE, x, y, 2);
 	}
-}
+}*/

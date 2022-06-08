@@ -6,6 +6,7 @@ void initSensors(){
 	initLightSensor();
 	ADC_Init(LPC_ADC, 100000);
 	initRainSensor();
+	initI2C0(); //CO2
 }
 	
 void initTempSensor(){
@@ -82,4 +83,9 @@ void getRainSensor(){
 	
 	oldMaintienBouton2 = bp;
 }
+
+void getCO2Sensor(){
 	
+	uint8_t tmp;
+	lire(0x58, NULL, 0, tmp,)
+}

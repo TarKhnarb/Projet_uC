@@ -5,6 +5,7 @@
 #include "global.h"
 #include "lpc17xx_pinsel.h"
 #include "touch\ili_lcd_general.h"
+#include "I2C.h"
 
 void initSensors(void);
 
@@ -23,3 +24,5 @@ void getLightSensor(void);
 void initRainSensor(void);
 
 void getRainSensor(void);
+
+void getCO2Sensor(void);
