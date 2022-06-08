@@ -1,6 +1,9 @@
 #include "lpc17xx_libcfg_default.h"
 #include "lpc17xx_i2c.h"
+#include "lpc17xx_pinsel.h"
 #include "lpc17xx.h"
+
+#include "global.h"
 
 void initI2C0(void);
 

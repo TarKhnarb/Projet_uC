@@ -53,7 +53,7 @@ void setDayNightIcon(){
 	
 	if(luminosite < 10.f){
 		
-		jourNuit = 0;
+		jourNuit = 1; //0
 	}
 	else{
 		

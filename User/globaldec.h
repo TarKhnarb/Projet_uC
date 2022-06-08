@@ -28,6 +28,9 @@ float co2;
 float humidite;
 bool pluie;
 
+uint8_t co2Trame[2];
+bool flagCO2;
+
 //__________ bluetooth.h __________
 bool flagBluetooth = false;
 bool flagTIM1 = false;
@@ -41,7 +44,7 @@ const unsigned short GC = 0xDD9D; // pixel Gris Clair
 const unsigned short NN = 0x0000;	// pixel Noir Noir
 const unsigned short BB = 0xFFFF; // pixel Blanc Blanc
 const unsigned short JF = 0xFE23; // pixel Jaune Fonc�
-
+/*
 unsigned short LUNE[21][21] = 
 {{BF, BF, BF, BF, BF, BF, BF, BF, BF, BF, BF, BF, BF, BF, BF, BF, BF, BF, BF, BF, BF},
  {BF, BF, BF, BF, BF, BF, BF, BF, BF, BF, BF, BF, BF, BF, BF, BF, BF, BF, BF, BF, BF},
@@ -160,4 +163,4 @@ unsigned short NEIGE[21][21] =
  {BC, BC, BC, BC, BC, BB, BC, BC, BC, BC, BB, BC, BC, BC, BC, BC, BC, BC, BC, BC, BC},
  {BC, BC, BC, BC, BC, BC, BC, BC, BC, BC, BC, BC, BC, BC, BC, BC, BC, BC, BC, BC, BC},
  {BC, BC, BC, BC, BC, BC, BC, BC, BC, BC, BC, BC, BC, BC, BC, BC, BC, BC, BC, BC, BC}
-};
+};*/
