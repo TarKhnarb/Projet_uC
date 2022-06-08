@@ -128,7 +128,7 @@ void startTimer1(uint32_t duree){
 	 *********************/
 void TIMER1_IRQHandler(){
 
-	sensorToUpdate = (sensorToUpdate + 1)%5;
+	sensorToUpdate = (sensorToUpdate + 1)%4;
 	flagTIM1 = false;														// On baisse le flag du timer 1
 	TIM_ClearIntPending(LPC_TIM1, TIM_MR2_INT);	// Acquittement de MR2
 }

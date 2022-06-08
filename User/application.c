@@ -15,6 +15,7 @@ void boutons(){
 	
 	BP();
 	//BP2();
+  getRainSensor();
 }
 
 char* concatene(char caractere, uint32_t value){
@@ -64,7 +65,7 @@ void bluetooth(){
 
 	if(!flagTIM1){
 		
-		startTimer1(500); // 2000	// 2s
+		startTimer1(50); // 2000	// 2s
 		if(sensorToUpdate == 0){
 			
 			getTempSensor();
@@ -86,10 +87,6 @@ void bluetooth(){
 			//getMoistureSensor();
 			humidite = 50.f;
 			sendMessage(concatene('H', humidite)); 
-		}
-		else if(sensorToUpdate == 4){
-			
-			getRainSensor();
 		}
 	}
 	

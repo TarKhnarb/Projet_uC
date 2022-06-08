@@ -20,10 +20,6 @@ void initLightSensor(void);
 
 void getLightSensor(void);
 
-void initMoistureSensor(void);
-
-void getMoistureSensor(void);
-
 void initRainSensor(void);
 
 void getRainSensor(void);

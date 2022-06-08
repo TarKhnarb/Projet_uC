@@ -4,7 +4,6 @@ void initSensors(){
 	
 	initTempSensor();
 	initLightSensor();
-	initMoistureSensor();
 	ADC_Init(LPC_ADC, 100000);
 	initRainSensor();
 }
@@ -34,7 +33,7 @@ void getTempSensor(){
 	tmp = ADC_ChannelGetData(LPC_ADC, 2);
 	ADC_ChannelCmd (LPC_ADC, 2, DISABLE);
 		
-	a += abs(((1023.f-(float)tmp)*10000.f/(float)tmp));
+	a += abs(((5.5f-(float)tmp)*10000.f/(float)(tmp+1.f)));
 	temperature = 1.f/(log(a/10000.f)/3975.f+1.f/298.15f)-273.15f;
 		
 }
@@ -66,30 +65,9 @@ void getLightSensor(){
 	luminosite = ((float)light/4095.f)*100.f;
 }
 
-void initMoistureSensor(){
-	// P2.11:
-	
-	PINSEL_CFG_Type			configPin; 
-	PCONP_ |= (1 << 12); //AD0 
-	configPin.Funcnum 	 = 2;
-	configPin.OpenDrain = PINSEL_PINMODE_NORMAL;
-	configPin.Pinmode 	 = PINSEL_PINMODE_NORMAL; //output
-	configPin.Portnum 	 = 0;
-	configPin.Pinnum 	 = 24;
-	PINSEL_ConfigPin(&configPin);
-}
-
-void getMoistureSensor(){
-	
-	ADC_ChannelCmd (LPC_ADC, 1, ENABLE);
-	ADC_StartCmd(LPC_ADC, ADC_START_NOW);
-	while(!ADC_ChannelGetStatus(LPC_ADC, 1, 1)){}
-	
-}
-
 void initRainSensor(void){
 	
-	pluie = true;
+	pluie = false;
 }
 
 void getRainSensor(){
