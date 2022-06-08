@@ -7,6 +7,21 @@
 #include "constantes.h"
 #define PCONP_ *(unsigned long *)0x400FC0C4
 
+//__________ buzzer.h_________
+int buzzer;
+
+extern unsigned int cpt_note;
+extern bool flag_note;
+extern unsigned int note;
+extern unsigned int cpt_duree;
+extern bool flag_duree;
+extern unsigned int index_note;
+extern bool noteSonne;
+
+extern char tab_note[16];
+extern int tab_duree_note[16];
+extern double frequencesNotes[12];
+
 //__________ affichagelcd.h __________
 extern char chaine[30]; // buffer pour l'affichage sur le LCD
 extern uint16_t touch_x, touch_y ;

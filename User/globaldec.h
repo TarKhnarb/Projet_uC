@@ -4,6 +4,22 @@
 #include "constantes.h"
 #include "lpc17xx_i2c.h"
 
+//__________ buzzer.h_________
+int buzzer;
+
+unsigned int cpt_note;
+bool flag_note;
+unsigned int note;
+unsigned int cpt_duree;
+bool flag_duree;
+unsigned int index_note;
+bool noteSonne;
+
+char tab_note[16];
+int tab_duree_note[16];
+
+double frequencesNotes[12] = { 32.7f, 34.64f, 36.70f, 38.89f, 41.20f, 43.65f, 46.24f, 48.99f, 51.91f, 55.f, 58.27f, 61.73f};
+
 //__________ affichagelcd.h __________
 
 char chaine[30]; // buffer pour l'affichage sur le LCD
