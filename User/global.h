@@ -46,8 +46,8 @@ extern const unsigned short GF;
 extern const unsigned short GC;
 extern const unsigned short NN;
 
-extern unsigned short LUNE[21][21];
-extern unsigned short SOLEIL[21][21];
-extern unsigned short NUAGE[21][21];
-extern unsigned short PLUIE[21][21];
-extern unsigned short NEIGE[21][21];
+extern unsigned short LUNE[11][11];
+extern unsigned short SOLEIL[11][11];
+extern unsigned short NUAGE[11][11];
+extern unsigned short PLUIE[11][11];
+extern unsigned short NEIGE[11][11];
