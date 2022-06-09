@@ -8,7 +8,7 @@
 #define PCONP_ *(unsigned long *)0x400FC0C4
 
 //__________ buzzer.h_________
-int buzzer;
+
 
 extern unsigned int cpt_note;
 extern bool flag_note;

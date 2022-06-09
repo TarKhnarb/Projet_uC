@@ -5,7 +5,7 @@
 #include "lpc17xx_i2c.h"
 
 //__________ buzzer.h_________
-int buzzer;
+
 
 unsigned int cpt_note;
 bool flag_note;

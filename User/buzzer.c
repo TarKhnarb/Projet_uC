@@ -2,6 +2,8 @@
 
 void initBuzzer(){
 	
+	PINSEL_CFG_Type configBuzzer;
+	
 	cpt_duree = 0;
 	flag_duree = 0;
 	cpt_note = 0;
@@ -10,8 +12,6 @@ void initBuzzer(){
 	noteSonne = false;
 	
 	note = 0;
-	
-	PINSEL_CFG_Type configBuzzer;
 	
 	configBuzzer.Funcnum = 0;
 	configBuzzer.Portnum = 0;
