@@ -6,8 +6,6 @@ void initBluetooth(){
 	UART_CFG_Type uartCfg;
 	UART_FIFO_CFG_Type uartFIFOCfg;	// configuration FIFO pour la gestion des tâches
 
-	sensorToUpdate = 0;		// inittialisation de la variable d'actualisation des capteurs
-
 	//(shema 3A)
 	// Tx pin P0.2 
 	pinCfg.Pinnum = 2;
@@ -63,17 +61,17 @@ void UART0_IRQHandler(){
 	
 	switch(buffer){
 		
-		case 'A': // 0x41
+		case 0x41: //'A':
 			lcd_clear(Blue);
 			numMenu = 0;
 			break;
 		
-		case 'B': // 0x42
+		case 0x42: //'B':
 			lcd_clear(Blue);
 			numMenu = 1;
 			break;
 		
-		case 'D': // 0x44
+		case 0x44://'D':
 			lcd_clear(Blue);
 			numMenu = 2;
 			break;
@@ -86,14 +84,13 @@ void UART0_IRQHandler(){
 	//menu();	// A voir si encore necessaire
 }
 
-
 	/**************
 	 * initTimer1 *
 	 **************/
 void initTimer1(){
 
 	TIM_MATCHCFG_Type TIM_MatchConfigStruct;
-
+	
 	TIM_MODE_OPT TimerCounterMode = TIM_TIMER_MODE;
 	TIM_TIMERCFG_Type TIM_ConfigStruct;
 	TIM_ConfigStruct.PrescaleOption = TIM_PRESCALE_USVAL;
@@ -110,6 +107,8 @@ void initTimer1(){
 	TIM_ConfigMatch(LPC_TIM1, &TIM_MatchConfigStruct);
 	
 	NVIC_EnableIRQ(TIMER1_IRQn);	// On active la fonction d'interruption
+
+	sensorToUpdate = 0;		// inittialisation de la variable d'actualisation des capteurs
 }
 
 	/***************
