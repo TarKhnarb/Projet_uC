@@ -10,15 +10,15 @@ void initSensors(){
 	
 void initTempSensor(){
 	
-		// P0.25:
+		// P1.30:
 	
 	PINSEL_CFG_Type			configPin; 
 	PCONP_ |= (1 << 12); //AD0 
-	configPin.Funcnum 	 = 2;
+	configPin.Funcnum 	 = 3;
 	configPin.OpenDrain = PINSEL_PINMODE_NORMAL;
 	configPin.Pinmode 	 = PINSEL_PINMODE_NORMAL; //output
-	configPin.Portnum 	 = 0;
-	configPin.Pinnum 	 = 25;
+	configPin.Portnum 	 = 1;
+	configPin.Pinnum 	 = 30;
 	PINSEL_ConfigPin(&configPin);
 }
 void getTempSensor(){
@@ -26,15 +26,15 @@ void getTempSensor(){
 	uint16_t tmp;
 	float a=0.f;
 	
-	ADC_ChannelCmd (LPC_ADC, 2, ENABLE);
+	ADC_ChannelCmd (LPC_ADC, 4, ENABLE);
 	ADC_StartCmd(LPC_ADC, ADC_START_NOW);
-	while(!ADC_ChannelGetStatus(LPC_ADC, 2, 1)){}
+	while(!ADC_ChannelGetStatus(LPC_ADC, 4, 1)){}
 	
-	tmp = ADC_ChannelGetData(LPC_ADC, 2);
-	ADC_ChannelCmd (LPC_ADC, 2, DISABLE);
+	tmp = ADC_ChannelGetData(LPC_ADC, 4);
+	ADC_ChannelCmd (LPC_ADC, 4, DISABLE);
 		
-	a += abs(((5.5f-(float)tmp)*10000.f/(float)(tmp+1.f)));
-	temperature = 1.f/(log(a/10000.f)/3975.f+1.f/298.15f)-273.15f;
+	a +=((8192)*8-1)/(tmp-1); //abs(((6300.f-(float)tmp)*10000.f/(float)(tmp)));
+	temperature = 1.f/(log(a/100.f)/4275.f+1.f/298.15f)-273.15f-37.f;
 		
 }
 void initLightSensor(){
