@@ -32,7 +32,7 @@ typedef enum{
 #define BLANCHE 20000
 #define POINTE 30000
 
-typedef int Note;
-typedef int Octave;
+typedef int Note;	// Redéfinition du type int Note
+typedef int Octave;	// Redéfinition du type int en Octave
 
 #endif // CONTANT_H

@@ -5,39 +5,41 @@
 	 *******************/
 void initialisations(){
 	
-	initMenu();
-	initBluetooth();
-	initTimer1();
-	initSensors();
+	initMenu();				// On initialise l'écran LCD
+	initBluetooth();	// On initialise le bluetooth
+	initTimer1();			// On initialise le timer qui met à jour les valeurs des capteurs
+	initSensors();		// On initialise les différents capteurs
 	
-	//initBuzzer();
-	//initTimer0();
+	sensorToUpdate = 0;		// inittialisation de la variable d'actualisation des capteurs
+
+	//initBuzzer();		// On initialise le buzzer
+	//initTimer0();		// On initialise le timer du buzzer
 }
 
 void boutons(){
 	
-	bool bp = ((GPIO_ReadValue(2)>>10)&0x1);
-	unsigned int i;
+	bool bp = ((GPIO_ReadValue(2)>>10)&0x1);	// On récupère l'état de la broche du bouton 2 (p0.12)
+	unsigned int i;		// Initialisation de la valeur permettant de temporéser et donc d'éviter les rebonds
 	
-	
-	if(bp != oldMaintienBouton){
+	if(bp != oldMaintienBouton){	// S'il l'on détecte un changement de front
 		
 		for(i = 0; i < 1000; ++i){}
-		if(bp){
+		if(bp){	// Si on détecte un front montant
 			
-			lcd_clear(Blue);
-			numMenu = (numMenu + 1)%3;
-			//jouerMelodie();
+			lcd_clear(Blue);						// On repeint l'écran en bleu
+			numMenu = (numMenu + 1)%3;	// On incrémente la variable du menu
+			//jouerMelodie();	// On lance la mélodie
 		}
 	}
 	
-	//jouerBuzzer();
-	oldMaintienBouton = bp;
-  getRainSensor();
+	//jouerBuzzer();		// On joue la note 
+	oldMaintienBouton = bp;	// On sauvegarde l'ancien etat du outon
+  getRainSensor();				// On vérifie l'état du capteur d'eau (p0.11)
 }
 
 char* concatene(char caractere, uint32_t value){
 	
+	// On concatène le caracère suivis d'un foat précis au dixièmes, le tous encadré d'*
 	sprintf(stringToSend, "*%c%.1f*", caractere, (float)value);
 	
 	return &(stringToSend[0]);
@@ -81,38 +83,38 @@ void setDayNightIcon(){
 
 void bluetooth(){
 
-	if(!flagTIM1){
+	if(!flagTIM1){	// Si l'interruption du timer 1 à été réalisée, 
 		
-		startTimer1(50); // 2000	// 2s
+		startTimer1(50); // On démarre le timer pour une durée de 50 ms
 		if(sensorToUpdate == 0){
 			
-			getTempSensor();
-			sendMessage(concatene('T', temperature));
+			getTempSensor();	// On met à jour la valeur du capteur de température
+			sendMessage(concatene('T', temperature));	// On concatène et envoie les informations au téléphone
 		}
 		else if(sensorToUpdate == 1){
 			
-			getLightSensor();
-			setDayNightIcon();
-			sendMessage(concatene('L', luminosite));
+			getLightSensor();	// On met à jour la valeur du capteur de luminosité
+			setDayNightIcon();	// On met a jour le apteur de jour/nuit
+			sendMessage(concatene('L', luminosite));	// On concatène et envoie les informations à l'application
 		}
 		else if(sensorToUpdate == 2){
 			
-			co2 = 30;
+			co2 = 30;	// Valeur par défaut en attente de l'implémentation du capteur de CO2
 			sendMessage(concatene('C', co2));
 		}
 		else if(sensorToUpdate == 3){
 			
-			humidite = 50.f;
+			humidite = 50.f;	// Valeur par défaut en attente de l'implémentation du capteur d'humidité/Température
 			sendMessage(concatene('H', humidite)); 
 		}
 	}
 	
-	getWeatherIcon();
+	getWeatherIcon();		// On met à jour l'icône du temps
 }
 
 void stationMeteo(){
 	
-	boutons();
-	bluetooth();
-	menu();
+	boutons();		// On récupère les valeurs des boutons
+	bluetooth();	// On met à jour ou non les valeurs des capteurs
+	menu();				// On affiche l'écran LCD
 }

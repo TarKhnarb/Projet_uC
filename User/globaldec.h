@@ -5,7 +5,8 @@
 #include "lpc17xx_i2c.h"
 
 //__________ buzzer.h_________
-
+// Ports:
+// 	p0.26
 
 uint8_t cpt_note;
 bool flag_note;
@@ -21,6 +22,11 @@ int tab_duree_note[16];
 double frequencesNotes[12] = { 32.7f, 34.64f, 36.70f, 38.89f, 41.20f, 43.65f, 46.24f, 48.99f, 51.91f, 55.f, 58.27f, 61.73f};
 
 //__________ affichagelcd.h __________
+// Ports:
+// 	p06-9
+//	p0.19-23
+//	p1.23-25
+// 	p2.0-7
 
 char chaine[30]; // buffer pour l'affichage sur le LCD
 uint16_t touch_x, touch_y ;
@@ -32,12 +38,14 @@ uint8_t jourNuit;
 
 //__________ application.h __________
 uint8_t sensorToUpdate;
-
-//__________ bouton.h __________
 bool oldMaintienBouton = true;
 bool oldMaintienBouton2 = true;
 
 //__________ capteur.h __________
+// Ports:
+//	p1.30 -> température
+//	p1.31 -> lumoinosité
+// 	p2.11 -> pluie
 float temperature;
 float luminosite;
 float co2;
@@ -45,6 +53,11 @@ float humidite;
 bool pluie;
 
 //__________ bluetooth.h __________
+// Ports:
+//	p0.2 -> Tx
+//	p0.3 - Rx
+//  uart0
+// 	Timer 1 MR2
 bool flagBluetooth = false;
 bool flagTIM1 = false;
 char stringToSend[7];

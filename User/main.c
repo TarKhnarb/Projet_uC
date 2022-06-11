@@ -16,11 +16,11 @@
 //===========================================================//
 int main(void){
 		
-	initialisations();
+	initialisations();	// Appel des initialisations de l'application
 	
 	while(1){
 		
-		stationMeteo();
+		stationMeteo();	// On exécute notre application
 	}	
 }
 
