@@ -29,10 +29,10 @@ void initBluetooth(){
 	UART_Init(LPC_UART0, &uartCfg);
 	UART_TxCmd(LPC_UART0, ENABLE);											// Activation de l'envoie de données
 	UART_IntConfig(LPC_UART0, UART_INTCFG_RBR, ENABLE);	// Activation des interruptions sur l'uart0
-	NVIC_EnableIRQ(UART0_IRQn);
+	NVIC_EnableIRQ(UART0_IRQn);	// Ajout de l'interruption pour l'uart0
 	
-	UART_FIFOConfigStructInit(&uartFIFOCfg);	// Configuration de base de FIFO
-	UART_FIFOConfig(LPC_UART0,&uartFIFOCfg);
+	UART_FIFOConfigStructInit(&uartFIFOCfg);	// Configuration de base du mode FIFO pour l'uart (évite les soucis lors de l'envoie/recption simutané)
+	UART_FIFOConfig(LPC_UART0, &uartFIFOCfg);	// Configuration de l'uart0 en mode FIFO
 }
 
 	/***************
@@ -41,7 +41,7 @@ void initBluetooth(){
 void sendMessage(char *msg){
 	
 	char tmpMessage[40];
-	sprintf(tmpMessage, "%s", msg);
+	sprintf(tmpMessage, "%s", msg); // On concatène le message à envoyer dans le buffer
 	UART_Send(LPC_UART0, (unsigned char*)tmpMessage, strlen(tmpMessage), BLOCKING);
 }
 
@@ -55,11 +55,11 @@ void sendInteger(uint8_t value){
 
 void UART0_IRQHandler(){
 	
-	uint8_t buffer = UART_ReceiveByte(LPC_UART0);
+	uint8_t buffer = UART_ReceiveByte(LPC_UART0); // On récupère le caractère evoyé par l'application du téléphone
 	
 	//UART_Receive(LPC_UART0, &buffer, 1, BLOCKING);
 	
-	switch(buffer){
+	switch(buffer){	// Suivant la valeur on change le menu
 		
 		case 0x41: //'A':
 			lcd_clear(Blue);
@@ -80,8 +80,6 @@ void UART0_IRQHandler(){
 			lcd_clear(Blue);
 			break;
 	}
-	
-	//menu();	// A voir si encore necessaire
 }
 
 	/**************
@@ -107,8 +105,6 @@ void initTimer1(){
 	TIM_ConfigMatch(LPC_TIM1, &TIM_MatchConfigStruct);
 	
 	NVIC_EnableIRQ(TIMER1_IRQn);	// On active la fonction d'interruption
-
-	sensorToUpdate = 0;		// inittialisation de la variable d'actualisation des capteurs
 }
 
 	/***************

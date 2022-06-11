@@ -18,5 +18,22 @@ void initMenu(void);
  */
 void menu(void);
 
-void printPixelArt(uint8_t temps, unsigned int x, unsigned int y);
+/*
+ * printPixelArt():
+ *		temps: uint8_t, variable correspondant au temps caculé par le programme
+ *		x: 		 unsigned int, cooédonée x (haut gauche) où placer l'icône
+ *		y: 		 unsigned int, cooédonée y (haut gauche) où placer l'icône
+ */		
+void printPixelArt(uint8_t temps, unsigned x, unsigned y);
 
+	// Fonction utilisées par les fonctions précedentes :
+
+/*
+ * subPrintOixelArt():
+ *		pxl:  unsigned short[5][5], tableau contenant l'icône
+ *		x: 		unsigned int, cooédonée x (haut gauche) où placer l'icône
+ *		y: 		unsigned int, cooédonée y (haut gauche) où placer l'icône
+ *		e: 		unsigned int, indice d'agrandissement
+ * Permets de créer une homotétie de l'icône choisie au coordonnées souhaitées
+ */
+ 

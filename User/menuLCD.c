@@ -4,14 +4,15 @@
  ************/
 void initMenu(void){
 	
-	LCD_Initialization();
+	LCD_Initialization();	// On initialise l'écran LCD
 	
-	numMenu = 0;	// [3]
+	numMenu = 0;	// [0-2]
 	temps = 0;		// [1-4]
 	jourNuit = 1;	// [0-1]
 }
 
 void menu(void){
+	
 	switch(numMenu){
 		
 		// x: 0->239
@@ -74,7 +75,7 @@ void menu(void){
 	}
 }
 
-void subPrintPixelArt(unsigned short pxl[5][5], unsigned int x, unsigned int y, unsigned int e){
+void subPrintPixelArt(unsigned short pxl[5][5], unsigned x, unsigned y, unsigned e){
 
 	int i,j,k,h;
 	
