@@ -1,8 +1,8 @@
-#include "bouton.h"
-#include "capteurs.h"
 #include "bluetooth.h"
 #include "global.h"
 #include "menuLCD.h"
+#include "capteurs.h"
+#include "buzzer.h"
 
 #include <stdlib.h>
 #include <stdio.h>

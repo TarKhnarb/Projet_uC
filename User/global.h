@@ -9,16 +9,15 @@
 
 //__________ buzzer.h_________
 
-
-extern unsigned int cpt_note;
+extern uint8_t cpt_note;
 extern bool flag_note;
-extern unsigned int note;
-extern unsigned int cpt_duree;
+extern uint8_t note;
+extern uint16_t cpt_duree;
 extern bool flag_duree;
-extern unsigned int index_note;
+extern uint8_t index_note;
 extern bool noteSonne;
 
-extern char tab_note[16];
+extern uint8_t tab_note[16];
 extern int tab_duree_note[16];
 extern double frequencesNotes[12];
 
@@ -27,9 +26,9 @@ extern char chaine[30]; // buffer pour l'affichage sur le LCD
 extern uint16_t touch_x, touch_y ;
 
 //__________ menu.h __________
-extern unsigned char numMenu;
-extern unsigned char temps;
-extern unsigned char jourNuit;
+extern uint8_t numMenu;
+extern uint8_t temps;
+extern uint8_t jourNuit;
 
 //__________ bouton.h __________
 extern bool maintienBouton;
@@ -54,15 +53,15 @@ extern char stringToSend[7];
 //__________ application.h __________
 extern uint8_t sensorToUpdate;
 
-
 //__________ menuLCD.h __________
 extern const unsigned short BF;
 extern const unsigned short GF;
 extern const unsigned short GC;
 extern const unsigned short NN;
 
-extern unsigned short LUNE[21][21];
-extern unsigned short SOLEIL[21][21];
-extern unsigned short NUAGE[21][21];
-extern unsigned short PLUIE[21][21];
-extern unsigned short NEIGE[21][21];
+extern unsigned short LUNE[5][5];
+extern unsigned short SOLEIL[5][5];
+extern unsigned short NUAGE[5][5];
+extern unsigned short PLUIE[5][5];
+extern unsigned short NEIGE[5][5];
+

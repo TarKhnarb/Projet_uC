@@ -1,5 +1,7 @@
-#include <math.h>
+#ifndef BUZZER_H
+#define BUZZER_H
 
+#include <math.h>
 #include "lpc17xx_pinsel.h"
 #include "lpc17xx_gpio.h"
 #include "lpc17xx_timer.h"
@@ -19,3 +21,5 @@ void startTimer0(void);
 void jouerBuzzer(void);
 
 void jouerMelodie(void);
+
+#endif

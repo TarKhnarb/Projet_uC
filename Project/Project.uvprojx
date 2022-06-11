@@ -10,13 +10,13 @@
       <TargetName>Open1786</TargetName>
       <ToolsetNumber>0x4</ToolsetNumber>
       <ToolsetName>ARM-ADS</ToolsetName>
-      <pCCUsed>5060960::V5.06 update 7 (build 960)::ARMCC</pCCUsed>
+      <pCCUsed>5060960::V5.06 update 7 (build 960)::.\ARMCC</pCCUsed>
       <uAC6>0</uAC6>
       <TargetOption>
         <TargetCommonOption>
           <Device>LPC1768</Device>
           <Vendor>NXP</Vendor>
-          <PackID>Keil.LPC1700_DFP.2.7.0</PackID>
+          <PackID>Keil.LPC1700_DFP.2.7.1</PackID>
           <PackURL>http://www.keil.com/pack/</PackURL>
           <Cpu>IRAM(0x10000000,0x8000) IRAM2(0x2007C000,0x8000) IROM(0x00000000,0x80000) CPUTYPE("Cortex-M3") CLOCK(12000000) ELITTLE</Cpu>
           <FlashUtilSpec></FlashUtilSpec>
@@ -544,16 +544,6 @@
               <FilePath>..\User\bluetooth.h</FilePath>
             </File>
             <File>
-              <FileName>bouton.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\User\bouton.c</FilePath>
-            </File>
-            <File>
-              <FileName>bouton.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\User\bouton.h</FilePath>
-            </File>
-            <File>
               <FileName>capteurs.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\User\capteurs.c</FilePath>
@@ -564,16 +554,6 @@
               <FilePath>..\User\capteurs.h</FilePath>
             </File>
             <File>
-              <FileName>I2C.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\User\I2C.c</FilePath>
-            </File>
-            <File>
-              <FileName>I2C.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\User\I2C.h</FilePath>
-            </File>
-            <File>
               <FileName>buzzer.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\User\buzzer.c</FilePath>
@@ -582,6 +562,16 @@
               <FileName>buzzer.h</FileName>
               <FileType>5</FileType>
               <FilePath>..\User\buzzer.h</FilePath>
+            </File>
+            <File>
+              <FileName>I2C.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\User\I2C.c</FilePath>
+            </File>
+            <File>
+              <FileName>I2C.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\User\I2C.h</FilePath>
             </File>
           </Files>
         </Group>

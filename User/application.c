@@ -9,12 +9,30 @@ void initialisations(){
 	initBluetooth();
 	initTimer1();
 	initSensors();
+	
+	//initBuzzer();
+	//initTimer0();
 }
 
 void boutons(){
 	
-	BP();
-	//BP2();
+	bool bp = ((GPIO_ReadValue(2)>>10)&0x1);
+	unsigned int i;
+	
+	
+	if(bp != oldMaintienBouton){
+		
+		for(i = 0; i < 1000; ++i){}
+		if(bp){
+			
+			lcd_clear(Blue);
+			numMenu = (numMenu + 1)%3;
+			//jouerMelodie();
+		}
+	}
+	
+	//jouerBuzzer();
+	oldMaintienBouton = bp;
   getRainSensor();
 }
 
@@ -84,17 +102,12 @@ void bluetooth(){
 		}
 		else if(sensorToUpdate == 3){
 			
-			//getMoistureSensor();
 			humidite = 50.f;
 			sendMessage(concatene('H', humidite)); 
 		}
 	}
 	
 	getWeatherIcon();
-	if(flagBluetooth){
-			
-		flagBluetooth = false;
-	}
 }
 
 void stationMeteo(){
