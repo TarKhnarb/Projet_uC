@@ -64,4 +64,3 @@ extern unsigned short SOLEIL[5][5];
 extern unsigned short NUAGE[5][5];
 extern unsigned short PLUIE[5][5];
 extern unsigned short NEIGE[5][5];
-

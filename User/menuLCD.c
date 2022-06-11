@@ -35,7 +35,6 @@ void menu(void){
 			sprintf(chaine,"HH:MM:SS");
 			LCD_Write_String (88, 155, chaine, White, Blue);
 			break;
-			//
 		
 		case 1:
 			//Rectangle jour/nuit
