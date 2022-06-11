@@ -55,9 +55,9 @@ void sendInteger(uint8_t value){
 
 void UART0_IRQHandler(){
 	
-	uint8_t buffer;
+	uint8_t buffer = UART_ReceiveByte(LPC_UART0);
 	
-	UART_Receive(LPC_UART0, &buffer, 1, BLOCKING);
+	//UART_Receive(LPC_UART0, &buffer, 1, BLOCKING);
 	
 	switch(buffer){
 		

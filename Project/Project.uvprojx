@@ -429,11 +429,6 @@
               <FilePath>..\Libraries\LCP1768_StdPeriph_Driver\source\lpc17xx_timer.c</FilePath>
             </File>
             <File>
-              <FileName>lpc17xx_exti.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\Libraries\LCP1768_StdPeriph_Driver\source\lpc17xx_exti.c</FilePath>
-            </File>
-            <File>
               <FileName>lpc17xx_nvic.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\Libraries\LCP1768_StdPeriph_Driver\source\lpc17xx_nvic.c</FilePath>
@@ -454,14 +449,14 @@
               <FilePath>..\Libraries\LCP1768_StdPeriph_Driver\source\lpc17xx_uart.c</FilePath>
             </File>
             <File>
-              <FileName>lpc17xx_ssp.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\Libraries\LCP1768_StdPeriph_Driver\source\lpc17xx_ssp.c</FilePath>
-            </File>
-            <File>
               <FileName>lpc17xx_adc.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\Libraries\LCP1768_StdPeriph_Driver\source\lpc17xx_adc.c</FilePath>
+            </File>
+            <File>
+              <FileName>lpc17xx_ssp.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Libraries\LCP1768_StdPeriph_Driver\source\lpc17xx_ssp.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -549,16 +544,6 @@
               <FilePath>..\User\bluetooth.h</FilePath>
             </File>
             <File>
-              <FileName>bouton.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\User\bouton.c</FilePath>
-            </File>
-            <File>
-              <FileName>bouton.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\User\bouton.h</FilePath>
-            </File>
-            <File>
               <FileName>capteurs.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\User\capteurs.c</FilePath>
@@ -567,6 +552,16 @@
               <FileName>capteurs.h</FileName>
               <FileType>5</FileType>
               <FilePath>..\User\capteurs.h</FilePath>
+            </File>
+            <File>
+              <FileName>buzzer.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\User\buzzer.c</FilePath>
+            </File>
+            <File>
+              <FileName>buzzer.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\User\buzzer.h</FilePath>
             </File>
             <File>
               <FileName>I2C.c</FileName>
