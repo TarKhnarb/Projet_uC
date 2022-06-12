@@ -16,6 +16,52 @@ void initialisations(){
 	//initTimer0();		// On initialise le timer du buzzer
 }
 
+	/**************
+	 * initTimer1 *
+	 **************/
+void initTimer1(){
+
+	TIM_MATCHCFG_Type TIM_MatchConfigStruct;
+	
+	TIM_MODE_OPT TimerCounterMode = TIM_TIMER_MODE;
+	TIM_TIMERCFG_Type TIM_ConfigStruct;
+	TIM_ConfigStruct.PrescaleOption = TIM_PRESCALE_USVAL;
+	TIM_ConfigStruct.PrescaleValue = 25000;	// précision 1ms
+
+	TIM_MatchConfigStruct.MatchChannel = 2;
+	TIM_MatchConfigStruct.IntOnMatch = ENABLE;
+	TIM_MatchConfigStruct.ResetOnMatch = ENABLE;
+	TIM_MatchConfigStruct.StopOnMatch = DISABLE;
+	TIM_MatchConfigStruct.ExtMatchOutputType = TIM_EXTMATCH_NOTHING;
+	TIM_MatchConfigStruct.MatchValue = 100;	// par défaut
+
+	TIM_Init(LPC_TIM1, TimerCounterMode, &TIM_ConfigStruct);
+	TIM_ConfigMatch(LPC_TIM1, &TIM_MatchConfigStruct);
+	
+	NVIC_EnableIRQ(TIMER1_IRQn);	// On active la fonction d'interruption
+}
+
+	/***************
+	 * startTimer1 *
+	 ***************/
+void startTimer1(uint32_t duree){
+
+	TIM_UpdateMatchValue(LPC_TIM1, 2, duree);	// On met à jour la durée du timer
+	TIM_Cmd(LPC_TIM1, ENABLE);								// On démarre le compteur
+
+	flagTIM1 = true;													// On lève le flag du timer 1
+}
+
+	/*********************
+	 * TIMER1_IRQHandler *
+	 *********************/
+void TIMER1_IRQHandler(){
+
+	sensorToUpdate = (sensorToUpdate + 1)%4;
+	flagTIM1 = false;														// On baisse le flag du timer 1
+	TIM_ClearIntPending(LPC_TIM1, TIM_MR2_INT);	// Acquittement de MR2
+}
+
 void boutons(){
 	
 	bool bp = ((GPIO_ReadValue(2)>>10)&0x1);	// On récupère l'état de la broche du bouton 2 (p0.12)

@@ -27,12 +27,12 @@ void getTempSensor(){
 	uint16_t tmp;
 	float a=0.f;
 
-	ADC_ChannelCmd (LPC_ADC, 2, ENABLE);	// On active la lecture sur le chanel du capteur
+	ADC_ChannelCmd (LPC_ADC, 4, ENABLE);	// On active la lecture sur le chanel du capteur
 	ADC_StartCmd(LPC_ADC, ADC_START_NOW);	// On commence la conversion
-	while(!ADC_ChannelGetStatus(LPC_ADC, 2, 1)){}	// On attend de lire la valeur du capteur
+	while(!ADC_ChannelGetStatus(LPC_ADC, 4, 1)){}	// On attend de lire la valeur du capteur
 	
-	tmp = ADC_ChannelGetData(LPC_ADC, 2);	// On r�cup�re la valeur du capteur
-	ADC_ChannelCmd (LPC_ADC, 2, DISABLE);	// On d�sactive la lecture sur le chanel du capteur
+	tmp = ADC_ChannelGetData(LPC_ADC, 4);	// On r�cup�re la valeur du capteur
+	ADC_ChannelCmd (LPC_ADC, 4, DISABLE);	// On d�sactive la lecture sur le chanel du capteur
 		
 	a +=((8192)*8-1)/(tmp-1);
 	temperature = 1.f/(log(a/100.f)/4275.f+1.f/298.15f)-273.15f-37.f; // On converti la valeur recu

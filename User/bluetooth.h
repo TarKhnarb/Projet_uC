@@ -33,20 +33,3 @@ void sendInterger(uint8_t value);
  * Acquittement de UART0
  */
 void UART0_IRQHandler(void);
-
-/*
- * initTimer1():
- * Initalise le timer 1 pour la gestion des prises de données et envoie pour l'application
- */
-void initTimer1(void);
-
-/*
- * startTimer1(duree: uint32_t, durée en ms)
- * Lance timer 1 pour duree us
- */
-void startTimer1(uint32_t duree);
-
-/*
- * TIMER1_IRQHandler
- */
-void TIMER1_IRQHandler(void);
